@@ -41,7 +41,6 @@ public class GenerateTokenAdapter implements GenerateTokenPort<UserRequestDTO, S
                    .withExpiresAt(this.generateExpirationDate())
                    .sign(algorithm);
         } catch (JWTCreationException jwtCreationException){
-            //TODO - Class error with details
             throw new RuntimeException("Error with jwt creation {} " + jwtCreationException.getMessage());
         }
     }

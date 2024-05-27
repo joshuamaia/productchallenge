@@ -57,7 +57,7 @@ public class UserController {
 		return new ResponseEntity<>(findOne, HttpStatus.OK);
 	}
 
-	@Operation(summary = "Search By ID")
+	@Operation(summary = "Search By filter")
 	@ApiResponses(value = { @ApiResponse(responseCode = "200", description = "Found the User", content = {
 			@Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = UserResponseDTOPage.class))) }),
 			@ApiResponse(responseCode = "400", description = "Invalid id supplied", content = @Content) })

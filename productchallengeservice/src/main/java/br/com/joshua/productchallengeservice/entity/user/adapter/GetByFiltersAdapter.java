@@ -1,7 +1,10 @@
 package br.com.joshua.productchallengeservice.entity.user.adapter;
 
+import java.util.List;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
@@ -26,9 +29,13 @@ public class GetByFiltersAdapter implements GetByFiltersPort<Pageable, UserReque
 
 	@Override
 	public Page<UserResponseDTO> execute(Pageable pageable, UserRequestDTO userRequestDTO) {
-		UserModel userModelMap = this.mapper.map(userRequestDTO, UserModel.class);
-
-		return this.userModelRepository.findAll(UserModelSpecification.getByFilters(userModelMap), pageable)
-				.map(user -> this.mapper.map(userModelMap, UserResponseDTO.class));
+		UserModel UserModelMap = this.mapper.map(userRequestDTO, UserModel.class);
+		List<UserModel> UserModelList = this.userModelRepository.findAll(UserModelSpecification.getByFilters(UserModelMap), pageable).getContent();
+		List<UserResponseDTO> UserResponseDTOList = UserModelList.stream().map(User -> this.mapper.map(User, UserResponseDTO.class)).toList();
+		return convertListToPage(UserResponseDTOList, pageable);
 	}
+	
+	private Page<UserResponseDTO> convertListToPage(List<UserResponseDTO> list, Pageable pageable) {
+        return new PageImpl<>(list, pageable, list.size());
+    }
 }
