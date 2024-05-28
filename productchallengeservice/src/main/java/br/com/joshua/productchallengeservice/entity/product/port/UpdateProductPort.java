@@ -1,6 +1,6 @@
 package br.com.joshua.productchallengeservice.entity.product.port;
 
-public interface FindOneProductPort<IN, OUT> {
+public interface UpdateProductPort<IN, OUT> {
 	
 	OUT execute(IN in);
 

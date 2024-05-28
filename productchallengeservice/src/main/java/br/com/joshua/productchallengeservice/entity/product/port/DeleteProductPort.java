@@ -1,7 +1,7 @@
 package br.com.joshua.productchallengeservice.entity.product.port;
 
-public interface FindOneProductPort<IN, OUT> {
-	
-	OUT execute(IN in);
+public interface DeleteProductPort<IN> {
+
+	public void execute(IN in);
 
 }

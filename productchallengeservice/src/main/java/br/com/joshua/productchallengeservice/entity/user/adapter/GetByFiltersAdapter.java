@@ -30,9 +30,9 @@ public class GetByFiltersAdapter implements GetByFiltersPort<Pageable, UserReque
 	@Override
 	public Page<UserResponseDTO> execute(Pageable pageable, UserRequestDTO userRequestDTO) {
 		UserModel UserModelMap = this.mapper.map(userRequestDTO, UserModel.class);
-		List<UserModel> UserModelList = this.userModelRepository.findAll(UserModelSpecification.getByFilters(UserModelMap), pageable).getContent();
-		List<UserResponseDTO> UserResponseDTOList = UserModelList.stream().map(User -> this.mapper.map(User, UserResponseDTO.class)).toList();
-		return convertListToPage(UserResponseDTOList, pageable);
+		List<UserModel> userModelList = this.userModelRepository.findAll(UserModelSpecification.getByFilters(UserModelMap), pageable).getContent();
+		List<UserResponseDTO> userResponseDTOList = userModelList.stream().map(User -> this.mapper.map(User, UserResponseDTO.class)).toList();
+		return convertListToPage(userResponseDTOList, pageable);
 	}
 	
 	private Page<UserResponseDTO> convertListToPage(List<UserResponseDTO> list, Pageable pageable) {
