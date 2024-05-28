@@ -10,6 +10,8 @@ import {
   faSave,
   faFilePdf,
   faFileCsv,
+  faUser,
+  faUserSecret,
 } from '@fortawesome/free-solid-svg-icons';
 
 export const fontAwesomeIcons = [
@@ -25,4 +27,6 @@ export const fontAwesomeIcons = [
   faFileCsv,
   faLinkedin,
   faGithub,
+  faUser,
+  faUserSecret,
 ];

@@ -70,20 +70,29 @@
               class="btn btn-primary btn-sm botoes"
               data-bs-toggle="modal"
               data-bs-target="#detail"
+              data-toggle="tooltip"
+              data-placement="top"
+              title="Detail"
               (click)="selectProduct(product)"
             >
-              <fa-icon [icon]="['fas', 'search']"></fa-icon> Detail
+              <fa-icon [icon]="['fas', 'search']"></fa-icon>
             </button>
             <a
               [routerLink]="[product.id, 'edit']"
               class="btn btn-secondary btn-sm botoes"
-              ><fa-icon [icon]="['fas', 'edit']"></fa-icon> Edit</a
-            >
+              data-toggle="tooltip"
+              data-placement="top"
+              title="Edit"
+              ><fa-icon [icon]="['fas', 'edit']"></fa-icon
+            ></a>
             <button
+              data-toggle="tooltip"
+              data-placement="top"
+              title="Delete"
               (click)="deleteResource(product)"
               class="btn btn-danger btn-sm botoes"
             >
-              <fa-icon [icon]="['fas', 'trash']"></fa-icon> Delete
+              <fa-icon [icon]="['fas', 'trash']"></fa-icon>
             </button>
           </td>
         </tr>

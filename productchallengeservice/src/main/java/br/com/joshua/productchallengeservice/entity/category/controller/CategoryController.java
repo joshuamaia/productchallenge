@@ -32,6 +32,7 @@ public class CategoryController {
 	@ApiResponses(value = { @ApiResponse(responseCode = "200", description = "Found the Category", content = {
 			@Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = CategoryResponseDTO.class))) }),
 			@ApiResponse(responseCode = "400", description = "Invalid id supplied", content = @Content) })
+	@PreAuthorize("hasAnyRole('ADMIN','CLIENT')")
 	@GetMapping("/list")
 	public ResponseEntity<List<CategoryResponseDTO>> getAll() {
 		List<CategoryResponseDTO> getAll = this.categoryCrudFacade.findAll();

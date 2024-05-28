@@ -1,3 +1,10 @@
-<app-topo></app-topo>
-<app-dashboard></app-dashboard>
-<app-rodape></app-rodape>
+@if (!authService.isLoggedIn()) {
+<app-login-screen></app-login-screen>
+}@else {
+<div>
+  <app-topo></app-topo>
+  <app-dashboard></app-dashboard>
+  <app-rodape></app-rodape>
+</div>
+
+}

@@ -7,6 +7,7 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -42,6 +43,7 @@ public class ProductController {
 			@ApiResponse(responseCode = "200", description = "Found the List of ProductModel", content = {
 					@Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = ProductResponseDTO.class))) }),
 			@ApiResponse(responseCode = "400", description = "Invalid id supplied", content = @Content) })
+	@PreAuthorize("hasAnyRole('ADMIN','CLIENT')")
 	@GetMapping("/list")
 	public ResponseEntity<List<ProductResponseDTO>> getAll() {
 		List<ProductResponseDTO> products = productCrudFacade.getAllProduct();
@@ -52,6 +54,7 @@ public class ProductController {
 	@ApiResponses(value = {
 			@ApiResponse(responseCode = "200", description = "Found the List of ProductModel", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ProductPage.class))),
 			@ApiResponse(responseCode = "400", description = "Invalid id supplied", content = @Content) })
+	@PreAuthorize("hasAnyRole('ADMIN','CLIENT')")
 	@GetMapping(value = { "/{page}/{size}", "/{page}/{size}/{wordSearch}" })
 	public ResponseEntity<Page<ProductResponseDTO>> getAll(@PathVariable Integer page, @PathVariable Integer size,
 			@PathVariable(required = false) String wordSearch) {
@@ -63,6 +66,7 @@ public class ProductController {
 	@ApiResponses(value = {
 			@ApiResponse(responseCode = "200", description = "Found the List of ProductModel", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ProductPage.class))),
 			@ApiResponse(responseCode = "400", description = "Invalid id supplied", content = @Content) })
+	@PreAuthorize("hasAnyRole('ADMIN','CLIENT')")
 	@GetMapping("/filter")
 	public ResponseEntity<Page<ProductResponseDTO>> filter(@RequestParam(required = false) String name,
 			@RequestParam(required = false) String description, @RequestParam(required = false) Integer page,
@@ -77,6 +81,7 @@ public class ProductController {
 			@ApiResponse(responseCode = "201", description = "ProductModel created with sucessful", content = {
 					@Content(mediaType = "application/json", schema = @Schema(implementation = ProductResponseDTO.class)) }),
 			@ApiResponse(responseCode = "400", description = "Invalid id supplied", content = @Content) })
+	@PreAuthorize("hasAnyRole('ADMIN','CLIENT')")
 	@PostMapping
 	public ResponseEntity<ProductResponseDTO> create(@RequestBody ProductRequestDTO productRequestDTO) {
 		ProductResponseDTO productSave = productCrudFacade.saveProduct(productRequestDTO);
@@ -88,6 +93,7 @@ public class ProductController {
 			@ApiResponse(responseCode = "201", description = "ProductModel updated with sucessful", content = {
 					@Content(mediaType = "application/json", schema = @Schema(implementation = ProductResponseDTO.class)) }),
 			@ApiResponse(responseCode = "400", description = "Invalid id supplied", content = @Content) })
+	@PreAuthorize("hasAnyRole('ADMIN','CLIENT')")
 	@PutMapping
 	public ResponseEntity<ProductResponseDTO> update(@RequestBody ProductRequestDTO productRequestDTO) {
 		ProductResponseDTO productUpdate = productCrudFacade.updateProduct(productRequestDTO);
@@ -98,6 +104,7 @@ public class ProductController {
 	@ApiResponses(value = { @ApiResponse(responseCode = "200", description = "Found the ProductModel", content = {
 			@Content(mediaType = "application/json", schema = @Schema(implementation = ProductResponseDTO.class)) }),
 			@ApiResponse(responseCode = "400", description = "Invalid id supplied", content = @Content) })
+	@PreAuthorize("hasAnyRole('ADMIN','CLIENT')")
 	@GetMapping("/{id}")
 	public ResponseEntity<ProductResponseDTO> getOneById(@PathVariable Long id) {
 		ProductResponseDTO product = productCrudFacade.findOneProduct(id);
@@ -109,6 +116,7 @@ public class ProductController {
 			@ApiResponse(responseCode = "No Content", description = "Delete ProductModel", content = {
 					@Content(mediaType = "application/json", schema = @Schema(implementation = Void.class)) }),
 			@ApiResponse(responseCode = "400", description = "Invalid id supplied", content = @Content) })
+	@PreAuthorize("hasAnyRole('ADMIN','CLIENT')")
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> deleteById(@PathVariable Long id) {
 		productCrudFacade.deleteProduct(id);

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.joshua.productchallengeservice.entity.user.dto.UserRequestDTO;
+import br.com.joshua.productchallengeservice.security.TokenDTO;
 import br.com.joshua.productchallengeservice.security.facade.SecurityFacade;
 
 @RestController
@@ -21,9 +22,9 @@ public class SecurityController {
 	}
 
 	@PostMapping("login")
-	public ResponseEntity<String> login(@RequestBody UserRequestDTO userRequestDTO) {
+	public ResponseEntity<TokenDTO> login(@RequestBody UserRequestDTO userRequestDTO) {
 		String token = this.securityFacade.login(userRequestDTO);
-		return new ResponseEntity<>(token, HttpStatus.OK);
+		return new ResponseEntity<>(TokenDTO.builder().token(token).build(), HttpStatus.OK);
 	}
 
 }

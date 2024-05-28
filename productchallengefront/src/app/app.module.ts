@@ -9,9 +9,12 @@ import { DashboardComponent } from './layout/dashboard/dashboard.component';
 import { MenuComponent } from './layout/menu/menu.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { NgHttpLoaderModule } from 'ng-http-loader';
+import { AuthInterceptor } from './pages/login/auth.interceptor';
+import { AuthService } from './pages/login/shared/auth.service';
+import { LoginModule } from './pages/login/login.module';
 
 @NgModule({
   declarations: [
@@ -30,8 +33,15 @@ import { NgHttpLoaderModule } from 'ng-http-loader';
     HttpClientModule,
     NgHttpLoaderModule.forRoot(),
     SharedModule,
+    LoginModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
