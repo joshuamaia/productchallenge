@@ -27,14 +27,16 @@ public class SearchAllPageProductAdapter implements SearchAllPageProductPort<Int
 	public Page<ProductResponseDTO> execute(Integer page, Integer size, String wordSearch) {
 		PageRequest pageRequest = PageRequest.of(page, size);
 		if (wordSearch == null || wordSearch.trim().isEmpty()) {
-			List<ProductModel> list = this.repository.findAll(pageRequest).getContent();
+			Page<ProductModel> listPage = this.repository.findAll(pageRequest);
+			List<ProductModel> list = listPage.getContent();
 			List<ProductResponseDTO> listResponse = list.stream().map(product -> this.mapper.map(product, ProductResponseDTO.class)).collect(Collectors.toList());
-			return new PageImpl<ProductResponseDTO>(listResponse, PageRequest.of(page, size), listResponse.size());
+			return new PageImpl<ProductResponseDTO>(listResponse, PageRequest.of(page, size), listPage.getTotalElements());
 		}
 		wordSearch = wordSearch.toLowerCase();
-		List<ProductModel> list = this.repository.searchAllPage(wordSearch, pageRequest).getContent();
+		Page<ProductModel> listPage = this.repository.searchAllPage(wordSearch, pageRequest);
+		List<ProductModel> list = listPage.getContent();
 		List<ProductResponseDTO> listResponse = list.stream().map(product -> this.mapper.map(product, ProductResponseDTO.class)).collect(Collectors.toList());
-		return new PageImpl<ProductResponseDTO>(listResponse, PageRequest.of(page, size), listResponse.size());
+		return new PageImpl<ProductResponseDTO>(listResponse, pageRequest, listPage.getTotalElements());
 	}
 
 

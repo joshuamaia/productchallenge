@@ -1,0 +1,28 @@
+.list {
+  margin: 20px 0px;
+  padding: 20px;
+  min-height: 72vh;
+
+  position: relative;
+  -webkit-print-color-adjust: exact;
+}
+
+.button-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.actions {
+  text-align: end;
+}
+
+.actions-header {
+  padding: 10px;
+  background: #fff;
+}
+
+.botoes {
+  margin-left: 4px;
+  margin-right: 4px;
+}

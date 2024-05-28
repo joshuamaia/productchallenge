@@ -35,9 +35,10 @@ public class FilterProductAdapter implements FilterProductPort<ProductResponseDT
 	public Page<ProductResponseDTO> execute(@Nullable String name, @Nullable String email, @Nullable Integer page,
 			@Nullable Integer size) {
 		var specification = this.prepareSpecification(name, email);
-		List<ProductModel> list = this.producRepository.findAll(specification, this.preparePageable(PageRequest.of(page, size))).getContent();
+		var listPage = this.producRepository.findAll(specification, this.preparePageable(PageRequest.of(page, size)));
+		List<ProductModel> list = listPage.getContent();
 		List<ProductResponseDTO> listResponse = list.stream().map(product -> this.mapper.map(product, ProductResponseDTO.class)).collect(Collectors.toList());
-		return new PageImpl<ProductResponseDTO>(listResponse, PageRequest.of(page, size), listResponse.size());
+		return new PageImpl<ProductResponseDTO>(listResponse, PageRequest.of(page, size), listPage.getTotalElements());
 	}
 
 	@NotNull

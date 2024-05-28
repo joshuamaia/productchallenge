@@ -26,7 +26,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 
 @RestController
-@RequestMapping("api/v1/users")
+@RequestMapping("/api/v1/users")
 public class UserController {
 
 	private final UserCrudFacade userCrudFacade;
@@ -39,7 +39,7 @@ public class UserController {
 	@ApiResponses(value = { @ApiResponse(responseCode = "201", description = "User creted with sucessful", content = {
 			@Content(mediaType = "application/json", schema = @Schema(implementation = UserResponseDTO.class)) }),
 			@ApiResponse(responseCode = "400", description = "Invalid id supplied", content = @Content) })
-	@PostMapping("create")
+	@PostMapping("/create")
 	public ResponseEntity<UserResponseDTO> createUser(@RequestBody UserRequestDTO userRequestDTO) {
 		UserResponseDTO userSaveResponse = this.userCrudFacade.save(userRequestDTO);
 		return new ResponseEntity<>(userSaveResponse, HttpStatus.CREATED);
@@ -61,7 +61,7 @@ public class UserController {
 	@ApiResponses(value = { @ApiResponse(responseCode = "200", description = "Found the User", content = {
 			@Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = UserResponseDTOPage.class))) }),
 			@ApiResponse(responseCode = "400", description = "Invalid id supplied", content = @Content) })
-	@PostMapping("get-by-filters")
+	@PostMapping("/get-by-filters")
 	@PreAuthorize("hasAnyRole('ADMIN','CLIENT')")
 	public ResponseEntity<Page<UserResponseDTO>> getByFilters(Pageable pageable,
 			@RequestBody UserRequestDTO userRequestDTO) {

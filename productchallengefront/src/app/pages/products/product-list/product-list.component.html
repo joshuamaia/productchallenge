@@ -1,0 +1,99 @@
+<div class="list">
+  <app-bread-crumb [items]="[{ text: 'Products' }]"></app-bread-crumb>
+
+  <app-page-header
+    page-title="Products"
+    button-text="New"
+    [button-fa]="['fas', 'plus']"
+    button-link="new"
+    button-class="btn-success"
+  ></app-page-header>
+
+  <div class="card">
+    <div class="card-header">Product Filter</div>
+
+    <div class="card-body">
+      <div class="row">
+        <div class="form-group col-md-5">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            [(ngModel)]="name"
+          />
+        </div>
+        <div class="form-group col-md-5">
+          <label for="email">Description</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            [(ngModel)]="description"
+          />
+        </div>
+        <div class="form-group col-md-2 button-search">
+          <button
+            id="search"
+            type="button"
+            class="btn btn-primary btn-sm botoes"
+            (click)="filter()"
+          >
+            <fa-icon [icon]="['fas', 'search']"></fa-icon> Search
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid tableskindiv">
+    <table class="tableskin">
+      <thead>
+        <tr class="bg-primary text-light">
+          <th>Name</th>
+          <th>Description</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Available</th>
+          <th class="actions">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of resources">
+          <td>{{ product.name }}</td>
+          <td>{{ product.description }}</td>
+          <td>{{ product.categoryPath?.name }}</td>
+          <td>{{ product.price | number : "1.2-2" }}</td>
+          <td>{{ product.available ? "Yes" : "No" }}</td>
+          <td class="actions">
+            <button
+              type="button"
+              class="btn btn-primary btn-sm botoes"
+              data-bs-toggle="modal"
+              data-bs-target="#detail"
+              (click)="selectProduct(product)"
+            >
+              <fa-icon [icon]="['fas', 'search']"></fa-icon> Detail
+            </button>
+            <a
+              [routerLink]="[product.id, 'edit']"
+              class="btn btn-secondary btn-sm botoes"
+              ><fa-icon [icon]="['fas', 'edit']"></fa-icon> Edit</a
+            >
+            <button
+              (click)="deleteResource(product)"
+              class="btn btn-danger btn-sm botoes"
+            >
+              <fa-icon [icon]="['fas', 'trash']"></fa-icon> Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p-paginator
+      [rows]="size"
+      [totalRecords]="totalElementos"
+      (onPageChange)="paginate($event)"
+    ></p-paginator>
+  </div>
+  <app-product-detail [productSelected]="productSelected"></app-product-detail>
+</div>

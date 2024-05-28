@@ -1,0 +1,71 @@
+@import "../node_modules/@ng-select/ng-select/themes/default.theme.css";
+
+input[type="date"]::-webkit-inner-spin-button {
+  display: none;
+  -webkit-appearance: none;
+}
+
+.icon-pesquisar,
+.input-pesquisar {
+  color: #000 !important;
+  border-radius: 4px !important;
+  padding: 5px !important;
+  font-size: 18px !important;
+  margin-left: 5px !important;
+}
+
+.card {
+  margin: 20px 0 !important;
+}
+
+.procurar-css {
+  padding: 12px !important;
+  background-color: rgba($color: #3f51b5, $alpha: 0.8);
+}
+
+.tableskindiv {
+  padding: 20px;
+  box-shadow: 0px 5px 8px 0px rgb(0 0 0 / 15%);
+  border-radius: 8px;
+
+  .actions {
+    text-align: end;
+  }
+
+  .actions-header {
+    padding: 10px;
+    background: #fff;
+  }
+
+  .button-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .botoes {
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+}
+
+.tableskin {
+  width: 100%;
+
+  thead {
+    background-color: rgba($color: #3f51b5, $alpha: 0.4);
+  }
+  th {
+    padding: 10px !important;
+  }
+  tbody {
+    background-color: rgba($color: #3f51b5, $alpha: 0.07);
+  }
+  td {
+    padding: 15px;
+    text-align: left;
+  }
+  tbody tr:nth-child(even) {
+    background-color: rgba($color: #3f51b5, $alpha: 0.12);
+  }
+}

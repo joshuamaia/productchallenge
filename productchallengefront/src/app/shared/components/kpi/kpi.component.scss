@@ -1,0 +1,24 @@
+.text {
+  font-size: 28px;
+  color: #ffffff;
+}
+
+.kpi {
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.expense {
+  background: #dc3545;
+}
+
+.revenue {
+  background: #198754;
+}
+
+.total {
+  background: #0d6efd;
+}

@@ -19,7 +19,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 
 @RestController
-@RequestMapping("api/v1/categories")
+@RequestMapping("/api/v1/categories")
 public class CategoryController {
 
 	private final CategoryCrudFacade categoryCrudFacade;
@@ -32,8 +32,7 @@ public class CategoryController {
 	@ApiResponses(value = { @ApiResponse(responseCode = "200", description = "Found the Category", content = {
 			@Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = CategoryResponseDTO.class))) }),
 			@ApiResponse(responseCode = "400", description = "Invalid id supplied", content = @Content) })
-	@GetMapping("list")
-	@PreAuthorize("hasAnyRole('ADMIN','CLIENT')")
+	@GetMapping("/list")
 	public ResponseEntity<List<CategoryResponseDTO>> getAll() {
 		List<CategoryResponseDTO> getAll = this.categoryCrudFacade.findAll();
 		return new ResponseEntity<>(getAll, HttpStatus.OK);

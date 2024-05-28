@@ -1,0 +1,67 @@
+<div
+  class="modal fade"
+  id="detail"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content detail-css">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Details Product</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="card">
+          <div class="card-header">Product Informations</div>
+          <div class="card-body">
+            <table class="table">
+              <tbody>
+                <tr class="table-rows">
+                  <td class="header-dialog-colunm">Name:</td>
+                  <td>
+                    {{ productSelected.name }}
+                  </td>
+                </tr>
+                <tr class="table-rows">
+                  <td class="header-dialog-colunm">Description:</td>
+                  <td>
+                    {{ productSelected.description }}
+                  </td>
+                </tr>
+                <tr class="table-rows">
+                  <td class="header-dialog-colunm">Category:</td>
+                  <td>
+                    {{ productSelected.categoryPath?.name }}
+                  </td>
+                </tr>
+                <tr class="table-rows">
+                  <td class="header-dialog-colunm">Birth Date:</td>
+                  <td>
+                    {{ productSelected.price | number : "1.2-2" }}
+                  </td>
+                </tr>
+                <tr class="table-rows">
+                  <td class="header-dialog-colunm">Gender:</td>
+                  <td>
+                    {{ productSelected.available ? "Yes" : "No" }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">
+          Sair
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

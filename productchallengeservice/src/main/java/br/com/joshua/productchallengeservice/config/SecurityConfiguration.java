@@ -28,9 +28,16 @@ public class SecurityConfiguration {
 	public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
 		return httpSecurity.csrf(csrf -> csrf.disable())
 				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-				.authorizeHttpRequests(authorize -> authorize.requestMatchers(HttpMethod.POST, "api/v1/users/create")
-						.permitAll().requestMatchers(HttpMethod.POST, "api/v1/security/login").permitAll()
-						.requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/actuator/**").permitAll().anyRequest()
+				.authorizeHttpRequests(authorize -> authorize.requestMatchers(HttpMethod.POST, "/api/v1/users/create")
+						.permitAll()
+						.requestMatchers(HttpMethod.POST, "api/v1/security/login")
+						.permitAll()
+						.requestMatchers("api/v1/products/**")
+						.permitAll()
+						.requestMatchers("api/v1/categories/**")
+						.permitAll()
+						.requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/actuator/**")
+						.permitAll().anyRequest()
 						.authenticated())
 				.addFilterBefore(this.securityFilter, UsernamePasswordAuthenticationFilter.class).build();
 	}
