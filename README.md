@@ -19,3 +19,4 @@
 - In the root of the productchallengefront project run: npm i -f
 - Run the command: ng serve
 - Access the url http://localhost:4200/
+- Username = admin Password = admin
