@@ -1,5 +1,9 @@
 @import "../node_modules/@ng-select/ng-select/themes/default.theme.css";
 
+body {
+  background-color: #d3d3d3 !important;
+}
+
 input[type="date"]::-webkit-inner-spin-button {
   display: none;
   -webkit-appearance: none;

@@ -4,8 +4,7 @@
 
 ### step 1
 
-- Create the productchallengeservice database in Postgres
-- In the path ~productchallengeservice\src\main\resources\db\script.sql is the database creation script
+- Create the productchallengeservice database in Postgres (Flyway will create tables and first insert some data)
 - Run the ProductChallengesServiceApplication class
 
 ### step 2
