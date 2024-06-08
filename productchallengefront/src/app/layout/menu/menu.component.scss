@@ -1,15 +1,70 @@
-.navbar {
-  border-radius: 6px !important;
-}
-
 ul {
   background-color: #f2f2f2 !important;
-  padding: 5px;
-  border-radius: 4px;
 }
 
 .active {
   background: #1a237e;
   color: #fff !important;
   border-radius: 7px;
+}
+
+.navbar {
+  border-radius: 6px;
+  background-color: #fff; /* Cor de fundo branca */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve para destaque */
+  z-index: 500;
+}
+
+.navbar-brand {
+  color: #007bff; /* Cor azul para o logo/marca */
+  font-weight: bold; /* Negrito para destacar a marca */
+  transition: color 0.3s; /* Transição suave para mudanças de cor */
+}
+
+.navbar-brand:hover,
+.navbar-brand:focus {
+  color: #0056b3; /* Cor mais escura no hover */
+}
+
+.dropdown-menu {
+  border: none; /* Sem borda para o menu dropdown */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar o dropdown */
+  background-color: #f8f9fa; /* Cor de fundo clara para o dropdown */
+}
+
+/* Estilização dos itens do menu */
+.nav-link {
+  color: #555; /* Cor padrão dos links */
+  transition: color 0.3s; /* Transição suave para mudanças de cor */
+  padding: 5px;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #007bff; /* Cor azul ao passar o mouse ou focar */
+}
+
+/* Dropdown e itens do submenu */
+
+.nav-item a {
+  margin: 3px;
+  color: #333; /* Cor padrão dos itens do dropdown */
+}
+
+.nav-item a:hover {
+  color: #fff; /* Cor do texto no hover */
+  background-color: #007bff; /* Cor de fundo azul no hover */
+  border-radius: 6px;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .navbar-collapse {
+    background-color: #f8f9fa; /* Cor de fundo no modo colapsado */
+  }
+}
+
+/* Icones FontAwesome */
+.fa-icon {
+  margin-right: 5px; /* Espaçamento à direita dos ícones */
 }

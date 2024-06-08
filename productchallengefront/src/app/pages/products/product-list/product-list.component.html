@@ -46,6 +46,14 @@
     </div>
   </div>
   <div class="container-fluid tableskindiv">
+    <div class="actions actions-header">
+      <button
+        (click)="downloadReportPdf('product_challenge_report')"
+        class="btn btn-danger btn-sm botoes"
+      >
+        <fa-icon [icon]="['fas', 'file-pdf']"></fa-icon> Report PDF
+      </button>
+    </div>
     <table class="tableskin">
       <thead>
         <tr class="bg-primary text-light">

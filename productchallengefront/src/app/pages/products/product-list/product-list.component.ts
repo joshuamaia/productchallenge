@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../shared/product.model';
 import { BaseResourceListComponent } from '../../../shared/components/base-resource-list/base-resource-list.component';
 import { ProductService } from '../shared/product.service';
+import { DownloadService } from '../../../shared/services/download.service';
 
 @Component({
   selector: 'app-product-list',
@@ -16,7 +17,10 @@ export class ProductListComponent
   name: string | undefined;
   description: string | undefined;
 
-  constructor(private productService: ProductService) {
+  constructor(
+    private productService: ProductService,
+    private downloadService: DownloadService
+  ) {
     super(productService);
   }
 
@@ -51,5 +55,17 @@ export class ProductListComponent
           this.totalElementos = this.page.totalElements;
         })
     );
+  }
+
+  downloadReportPdf(reportName: string) {
+    this.downloadService
+      .downloadReportPdf('product_challenge_report')
+      .subscribe((response) => {
+        this.downloadService.downloadFile(
+          response,
+          `${reportName}.pdf`,
+          'application/pdf'
+        );
+      });
   }
 }
