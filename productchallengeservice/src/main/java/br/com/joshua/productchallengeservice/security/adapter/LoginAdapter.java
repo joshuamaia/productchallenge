@@ -6,13 +6,14 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 
+import br.com.joshua.productchallengeservice.entity.user.dto.UserRequesLogintDTO;
 import br.com.joshua.productchallengeservice.entity.user.dto.UserRequestDTO;
 import br.com.joshua.productchallengeservice.entity.user.model.UserModel;
 import br.com.joshua.productchallengeservice.security.port.GenerateTokenPort;
 import br.com.joshua.productchallengeservice.security.port.LoginPort;
 
 @Component
-public class LoginAdapter implements LoginPort<UserRequestDTO, String> {
+public class LoginAdapter implements LoginPort<UserRequesLogintDTO, String> {
 
 	private final ModelMapper mapper;
 
@@ -28,10 +29,10 @@ public class LoginAdapter implements LoginPort<UserRequestDTO, String> {
 	}
 
 	@Override
-	public String execute(UserRequestDTO userRequestDTO) {
+	public String execute(UserRequesLogintDTO userRequesLogintDTO) {
 		try {
 			UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
-					userRequestDTO.getUserName(), userRequestDTO.getPasswordUser());
+					userRequesLogintDTO.getUserName(), userRequesLogintDTO.getPasswordUser());
 			Authentication authentication = this.authenticationManager
 					.authenticate(usernamePasswordAuthenticationToken);
 			UserModel userModelAutentication = (UserModel) authentication.getPrincipal();
