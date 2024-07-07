@@ -12,7 +12,7 @@ import lombok.AllArgsConstructor;
 
 @Component
 @AllArgsConstructor
-public class UpdatePersonUC implements UpdateProductPort<ProductRequestDTO, ProductResponseDTO> {
+public class UpdateProductAdapter implements UpdateProductPort<ProductRequestDTO, ProductResponseDTO> {
 
 	private final ProductModelRepository repository;
 

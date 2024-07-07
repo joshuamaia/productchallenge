@@ -18,7 +18,7 @@ public class FindOneProducAdapter implements FindOneProductPort<Long, ProductRes
 
 	@Override
 	public ProductResponseDTO execute(Long in) {
-		return mapper.map(repository.findById(in), ProductResponseDTO.class);
+		return mapper.map(repository.findById(in).orElse(null), ProductResponseDTO.class);
 	}
 
 }
