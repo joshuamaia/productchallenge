@@ -1,8 +1,47 @@
 .conteudo {
-  background: linear-gradient(to right, #03045e, #0d6efd, #03045e);
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center; /* Centraliza horizontalmente o conteúdo interno */
-  align-items: center; /* Centraliza verticalmente o conteúdo interno */
+  background: linear-gradient(to right, #121212, #1a1a1a, #121212) !important;
+  width: 100% !important;
+  height: 100vh !important;
+  display: flex !important;
+  justify-content: center !important; /* Centraliza horizontalmente o conteúdo interno */
+  align-items: center !important; /* Centraliza verticalmente o conteúdo interno */
+}
+
+.conteudo .container {
+  padding-top: 50px !important; /* Espaçamento superior */
+}
+
+.card {
+  background-color: #333 !important; /* Fundo escuro para os cards */
+  color: #fff !important; /* Texto claro para os cards */
+}
+
+.card-header {
+  background-color: #222 !important; /* Fundo mais escuro para o cabeçalho do card */
+}
+
+.form-control,
+.input-group-text {
+  background-color: #555 !important; /* Fundo para os campos de entrada */
+  border: none !important; /* Sem bordas */
+  color: #fff !important; /* Texto claro */
+}
+
+.form-control:focus {
+  background-color: #666 !important; /* Fundo quando o campo está focado */
+  color: #fff !important; /* Texto claro quando focado */
+}
+
+.btn-primary {
+  background-color: #343a40 !important; /* Cor do botão alterada para cinza escuro */
+  border-color: #343a40 !important; /* Cor da borda do botão igual à do botão */
+}
+
+.btn-primary:hover {
+  background-color: #23272b !important; /* Cor do botão ao passar o mouse */
+  border-color: #1d2124 !important; /* Cor da borda do botão ao passar o mouse */
+}
+
+.fa-icon {
+  color: #ccc !important; /* Cor dos ícones */
 }

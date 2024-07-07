@@ -1,21 +1,21 @@
 .topo {
-  background: #3f51b5;
-  border-bottom: 2px solid #00bfff;
-  height: 18vh;
-  width: 100%;
+  background: #212121 !important; /* Fundo escuro */
+  border-bottom: 2px solid #333 !important; /* Borda mais sutil */
+  height: 18vh !important;
+  width: 100% !important;
 }
 
 .titulo {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  color: #fff;
-  font-size: 35px;
+  display: flex !important;
+  justify-content: center !important;
+  text-align: center !important;
+  color: #e0e0e0 !important; /* Texto em cinza claro para melhor visibilidade */
+  font-size: 35px !important;
 }
 
 @media screen and (max-width: 600px) {
   .titulo {
-    color: #fff;
-    font-size: 25px;
+    color: #e0e0e0 !important;
+    font-size: 25px !important;
   }
 }

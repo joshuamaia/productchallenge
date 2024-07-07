@@ -1,16 +1,48 @@
 @import "../node_modules/@ng-select/ng-select/themes/default.theme.css";
 
 body {
-  background-color: #d3d3d3 !important;
+  background-color: #121212 !important; /* Cor de fundo mais escura para o corpo */
+}
+
+.content {
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+  background-color: #333 !important; /* Fundo escuro para o container */
+  color: #fff !important; /* Texto branco para contraste */
+  padding: 20px !important; /* Espaçamento interno adequado */
+}
+
+.breadcrumb-item {
+  color: #fff !important;
+}
+
+label {
+  color: #fff !important;
+}
+
+.p-paginator {
+  background-color: #333 !important; /* Fundo escuro para o paginador */
+  border-radius: 4px !important; /* Arredonda as bordas para uma estética mais suave */
+  padding: 10px !important; /* Espaçamento interno para melhorar a usabilidade */
+  color: #fff !important; /* Cor cinza clara para os textos e números, proporcionando contraste */
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page {
+  color: #fff !important;
+}
+
+.p-icon {
+  color: #fff !important;
 }
 
 .card {
-  box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 15%) !important;
+  background-color: #333 !important; /* Fundo escuro para os cards */
+  box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 50%) !important; /* Sombra mais proeminente para melhor contraste */
 }
 
 .card-header {
-  background-color: rgba($color: #0d6efd, $alpha: 1) !important;
-  color: #fff !important;
+  background-color: #333 !important; /* Cor mais escura para o cabeçalho do card */
+  color: #fff !important; /* Cor clara para o texto */
 }
 
 input[type="date"]::-webkit-inner-spin-button {
@@ -20,7 +52,7 @@ input[type="date"]::-webkit-inner-spin-button {
 
 .icon-pesquisar,
 .input-pesquisar {
-  color: #000 !important;
+  color: #ccc !important; /* Cor mais clara para ícones e input */
   border-radius: 4px !important;
   padding: 5px !important;
   font-size: 18px !important;
@@ -33,23 +65,32 @@ input[type="date"]::-webkit-inner-spin-button {
 
 .procurar-css {
   padding: 12px !important;
-  background-color: rgba($color: #3f51b5, $alpha: 0.8);
+  background-color: #1a1a1a !important; /* Fundo escuro para a barra de pesquisa */
+}
+
+.table > :not(caption) > * > * {
+  background: #2c2c2c !important;
+  color: #fff !important;
 }
 
 .tableskindiv {
   padding: 20px;
-  box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 15%);
+  box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 50%);
   padding: 10px !important;
   border-radius: 8px;
-  background: #fff;
+  background: #242424 !important; /* Fundo escuro para as divs de tabela */
 
   .actions {
     text-align: end;
   }
 
+  th {
+    background: #2c2c2c !important;
+  }
+
   .actions-header {
     padding: 10px;
-    background: #fff;
+    background: #242424 !important; /* Cor de fundo igual ao restante da div */
   }
 
   .button-search {
@@ -64,23 +105,33 @@ input[type="date"]::-webkit-inner-spin-button {
   }
 }
 
+.bg-primary {
+  background-color: #1a1a1a !important; /* Cor de fundo mais escura para o cabeçalho do card */
+}
+
 .tableskin {
-  width: 100%;
+  width: 100% !important;
 
   thead {
-    background-color: rgba($color: #3f51b5, $alpha: 0.4);
+    background-color: #333 !important; /* Cor escura como alternativa ao azul claro de .bg-primary */
   }
   th {
     padding: 10px !important;
+    color: #fff !important; /* Texto branco para garantir contraste e visibilidade */
+    text-align: left !important;
   }
   tbody {
-    background-color: rgba($color: #3f51b5, $alpha: 0.07);
+    background-color: #1e1e1e !important; /* Fundo escuro para o corpo da tabela */
   }
   td {
-    padding: 15px;
-    text-align: left;
+    padding: 15px !important;
+    text-align: left !important;
+    color: #ccc !important; /* Cor cinza clara para o texto, para melhor visibilidade */
   }
   tbody tr:nth-child(even) {
-    background-color: rgba($color: #3f51b5, $alpha: 0.12);
+    background-color: #252525 !important; /* Variação ligeira para linhas alternadas, mantendo boa visibilidade */
+  }
+  tbody tr:hover {
+    background-color: #2c2c2c !important; /* Cor de fundo ao passar o mouse, para melhorar a interatividade */
   }
 }

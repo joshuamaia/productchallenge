@@ -1,8 +1,8 @@
 .detail-css {
   padding: 12px !important;
-  background-color: rgba($color: #3f51b5, $alpha: 1);
+  background-color: #333 !important; /* Fundo escuro para detalhes */
 }
 
 .modal-title {
-  color: white !important;
+  color: white !important; /* Mantém a cor do texto em branco para máximo contraste */
 }

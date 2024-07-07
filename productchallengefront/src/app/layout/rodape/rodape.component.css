@@ -1,35 +1,35 @@
 .footer {
-  width: 100%;
-  background: #3f51b5;
-  border-top: 2px solid #00bfff;
-  clear: both;
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100% !important;
+  background: #212121 !important; /* Fundo mais escuro para o rodapé */
+  border-top: 2px solid #333 !important; /* Borda mais sutil e escura */
+  clear: both !important;
+  position: absolute !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 a {
-  color: #ffffff;
+  color: #bbb !important; /* Cor mais clara para links, melhor legibilidade em fundo escuro */
 }
 
 a:hover {
-  color: #00bfff;
+  color: #ddd !important; /* Cor mais clara ao passar o mouse */
 }
 
 .centralizar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 .titulo {
-  color: #fff;
-  font-size: 25px;
+  color: #fff !important; /* Mantém a cor branca para títulos para boa legibilidade */
+  font-size: 25px !important;
 }
 
 .autor {
-  margin-left: 20px;
-  color: white;
-  font-size: 18px;
+  margin-left: 20px !important;
+  color: #ccc !important; /* Tonalidade de cinza claro para o autor */
+  font-size: 18px !important;
 }

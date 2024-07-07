@@ -1,70 +1,70 @@
 ul {
-  background-color: #f2f2f2 !important;
+  background-color: #333 !important; /* Fundo escuro para listas */
 }
 
 .active {
-  background: #1a237e;
-  color: #fff !important;
-  border-radius: 7px;
+  background: #424242 !important;
+  color: #fff !important; /* Texto claro para ativo */
+  border-radius: 7px !important;
 }
 
 .navbar {
-  border-radius: 6px;
-  background-color: #fff; /* Cor de fundo branca */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve para destaque */
-  z-index: 500;
+  border-radius: 6px !important;
+  background-color: #2c2c2c !important; /* Nova cor de fundo escura, um cinza mais claro para a navbar */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important; /* Sombra mais proeminente */
+  z-index: 500 !important;
 }
 
 .navbar-brand {
-  color: #007bff; /* Cor azul para o logo/marca */
-  font-weight: bold; /* Negrito para destacar a marca */
-  transition: color 0.3s; /* Transição suave para mudanças de cor */
+  color: #1a76d2 !important; /* Tonalidade de azul escuro para o logo/marca */
+  font-weight: bold !important;
+  transition: color 0.3s !important;
 }
 
 .navbar-brand:hover,
 .navbar-brand:focus {
-  color: #0056b3; /* Cor mais escura no hover */
+  color: #2196f3 !important; /* Cor mais clara no hover, ainda em tonalidade azul */
 }
 
 .dropdown-menu {
-  border: none; /* Sem borda para o menu dropdown */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar o dropdown */
-  background-color: #f8f9fa; /* Cor de fundo clara para o dropdown */
+  border: none !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important; /* Sombra mais proeminente para dropdown */
+  background-color: #424242 !important; /* Fundo escuro para dropdown */
 }
 
 /* Estilização dos itens do menu */
 .nav-link {
-  color: #555; /* Cor padrão dos links */
-  transition: color 0.3s; /* Transição suave para mudanças de cor */
-  padding: 5px;
+  color: #1a76d2 !important; /* Azul escuro para links */
+  transition: color 0.3s !important;
+  padding: 5px !important;
 }
 
 .nav-link:hover,
 .nav-link:focus {
-  color: #007bff; /* Cor azul ao passar o mouse ou focar */
+  color: #2196f3 !important; /* Azul claro ao passar o mouse ou focar */
 }
 
 /* Dropdown e itens do submenu */
-
 .nav-item a {
-  margin: 3px;
-  color: #333; /* Cor padrão dos itens do dropdown */
+  margin: 3px !important;
+  color: #1a76d2 !important; /* Azul escuro para itens do dropdown */
 }
 
 .nav-item a:hover {
-  color: #fff; /* Cor do texto no hover */
-  background-color: #007bff; /* Cor de fundo azul no hover */
-  border-radius: 6px;
+  color: #fff !important; /* Texto branco no hover */
+  background-color: #333 !important; /* Fundo escuro no hover */
+  border-radius: 6px !important;
 }
 
 /* Responsividade */
 @media (max-width: 992px) {
   .navbar-collapse {
-    background-color: #f8f9fa; /* Cor de fundo no modo colapsado */
+    background-color: #2c2c2c !important; /* Cor de fundo escura no modo colapsado */
   }
 }
 
 /* Icones FontAwesome */
 .fa-icon {
-  margin-right: 5px; /* Espaçamento à direita dos ícones */
+  color: #1a76d2 !important; /* Tonalidade de azul escuro para ícones */
+  margin-right: 5px !important; /* Espaçamento à direita dos ícones */
 }
