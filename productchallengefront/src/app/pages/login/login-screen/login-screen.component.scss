@@ -17,7 +17,12 @@
 }
 
 .card-header {
-  background-color: #222 !important; /* Fundo mais escuro para o cabeçalho do card */
+  background-color: rgba(
+    255,
+    215,
+    0,
+    0.5
+  ) !important; /* Fundo mais escuro para o cabeçalho do card */
 }
 
 .form-control,
@@ -34,12 +39,22 @@
 
 .btn-primary {
   background-color: #343a40 !important; /* Cor do botão alterada para cinza escuro */
-  border-color: #343a40 !important; /* Cor da borda do botão igual à do botão */
+  border-color: rgba(
+    255,
+    215,
+    0,
+    0.5
+  ) !important; /* Cor da borda do botão igual à do botão */
 }
 
 .btn-primary:hover {
   background-color: #23272b !important; /* Cor do botão ao passar o mouse */
-  border-color: #1d2124 !important; /* Cor da borda do botão ao passar o mouse */
+  border-color: rgba(
+    255,
+    215,
+    0,
+    0.5
+  ) !important; /* Cor da borda do botão ao passar o mouse */
 }
 
 .fa-icon {

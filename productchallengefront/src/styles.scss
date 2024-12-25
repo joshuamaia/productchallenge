@@ -37,11 +37,16 @@ label {
 
 .card {
   background-color: #333 !important; /* Fundo escuro para os cards */
-  box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 50%) !important; /* Sombra mais proeminente para melhor contraste */
+  border: 2px solid rgba(255, 215, 0, 0.5) !important; /* Sombra mais proeminente para melhor contraste */
 }
 
 .card-header {
-  background-color: #333 !important; /* Cor mais escura para o cabeçalho do card */
+  background-color: rgba(
+    255,
+    215,
+    0,
+    0.5
+  ) !important; /* Cor mais escura para o cabeçalho do card */
   color: #fff !important; /* Cor clara para o texto */
 }
 
@@ -75,7 +80,7 @@ input[type="date"]::-webkit-inner-spin-button {
 
 .tableskindiv {
   padding: 20px;
-  box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 50%);
+  border: 2px solid rgba(255, 215, 0, 0.5);
   padding: 10px !important;
   border-radius: 8px;
   background: #242424 !important; /* Fundo escuro para as divs de tabela */

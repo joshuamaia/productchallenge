@@ -11,7 +11,7 @@ ul {
 .navbar {
   border-radius: 6px !important;
   background-color: #2c2c2c !important; /* Nova cor de fundo escura, um cinza mais claro para a navbar */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important; /* Sombra mais proeminente */
+  border: 2px solid rgba(255, 215, 0, 0.5); /* Sombra mais proeminente */
   z-index: 500 !important;
 }
 
@@ -28,7 +28,7 @@ ul {
 
 .dropdown-menu {
   border: none !important;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important; /* Sombra mais proeminente para dropdown */
+  border: 2px solid rgba(255, 215, 0, 0.5); /* Sombra mais proeminente para dropdown */
   background-color: #424242 !important; /* Fundo escuro para dropdown */
 }
 
